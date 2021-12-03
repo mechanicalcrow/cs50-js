@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+
+        div {
+            height: 100vh;
+            display: flex;
+            text-align: center;
+            align-items: center;
+            background: rgb(22, 20, 20, .30);
+                
+                background-repeat: no-repeat;
+                background-size: cover;
+                color: ivory;
+                
+               
+               
+        }
+        h1, p {
+            font-size: 3em;
+        }
+        
+        div {
+            display: none;
+        }
+        @keyframes grow {
+            0% {
+                font-size: 12px;
+                
+            }
+            50% {
+                font-size: 60px;
+               
+            }
+            100% {
+                font-size: 12px;
+            }
+        }
+       /* p {
+           animation-name: grow;
+           animation-duration: 2s;
+           animation-fill-mode: forwards;
+           animation-iteration-count: infinite;
+       } */
+      
+        
+    </style>
+
+
+    <script>
+        
+        function showPage(page) {
+            document.querySelectorAll('div').forEach(div => {
+                div.style.display = 'none';
+                
+            })
+           
+             document.querySelector(`#${page}`).style.display = 'block';
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+
+        
+            document.querySelectorAll('button').forEach(button => {
+                button.onclick = function () {
+                    showPage(this.dataset.page);
+            }
+            });
+
+            
+       });
+       
+      
+
+      
+        
+   
+    document.addEventListener('DOMContentLoaded', () => {
+       
+        let p = document.querySelector('p');
+
+p.style.animationPlayState = 'paused';
+
+// document.querySelector('h1').onclick = ()=>{
+//     if(p.style.animationPlayState === 'paused'){
+//         p.style.animationPlayState = 'running';
+//     } else {
+//         p.style.animationPlayState = 'paused';
+//     }
+// }
+
+    });    
+    
+    </script>
+    
+
+    <title>SPA or Single-Page Application</title>
+</head>
+<body>
+    <nav>
+        <button data-page="page1">Page 1</button>
+        <button data-page="page2">Page 2</button>
+        <button data-page="page3">Page 3</button>
+        <button id="pause">Animation</button>
+        
+    </nav>
+    
+
+    <div class="page" id="page1" style="background-image: url('images/rome.png');  ">
+        
+        <h1>This is page one</h1>
+        <p>This is the life of page one, among the blocks and stones.</p>
+       
+    </div>
+
+    <div class="page" id="page2" style="background-image: url('images/piccadilly.png');  ">
+       
+        <h1>Regardez ici--cette une page duetta (2)</h1>
+        <p>Page two wants to go to Paris, but now resides in London.</p>
+            
+       
+    </div>
+
+    <div class="page" id="page3" style="background-image: url('images/sweden.png'); ">
+     
+        <h1>C'est la page 3 trois</h1>
+        
+        <p>Page three as been in Sweden for a few years by now.</p>
+            
+    </div>
+    
+    
+</body>
+</html>
